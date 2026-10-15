@@ -1,0 +1,56 @@
+---
+#Tests en host (PC) de app.c
+
+
+:project:
+  :build_root: build
+  :use_exceptions: FALSE
+  :use_test_preprocessor: :none
+  :use_deep_dependencies: :none
+  :test_file_prefix: test_
+  :default_tasks:
+    - test:all
+
+:paths:
+  :test:
+    - +:test/**
+    - -:test/support
+  :source:
+    - src/**
+  :include:
+    - src/**
+  :support:
+    - test/support
+
+:defines:
+  :test:
+    - HOST_TEST
+
+:cmock:
+  :mock_prefix: mock_
+  :when_no_prototypes: :warn
+  # El orden de evaluacion de argumentos en C no esta especificado
+  # (App_Run llama a GetTemperature/GetHumidity dentro de la llamada a
+  # PrintMeasurement), por eso no se fuerza orden estricto entre mocks.
+  :enforce_strict_ordering: FALSE
+  :plugins:
+    - :ignore
+    - :ignore_arg
+    - :callback
+  :callback_after_arg_check: FALSE
+
+:plugins:
+  :enabled:
+    - report_tests_pretty_stdout
+    - gcov
+
+:gcov:
+  :utilities:
+    - gcovr
+  :reports:
+    - HtmlDetailed
+    - Text
+  :gcovr:
+    :report_include: "src/app.c"
+    :branches: TRUE
+...
