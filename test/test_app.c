@@ -19,7 +19,7 @@
  *       la API publica: codigo defensivo, queda fuera de la cobertura)
  *
  * Aislamiento: AHT20Sensor, Timer y SerialDisplay estan mockeados con CMock.
- * El estado interno de App es privado, asi que se verifica por COMPORTAMIENTO:
+ * El estado interno de App es privado, asi que se verifica por comportamiento:
  * CMock falla ante cualquier llamada no esperada, por lo que si la maquina
  * esta en un estado distinto al previsto, el test falla.
  *

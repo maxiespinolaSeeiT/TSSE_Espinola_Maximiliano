@@ -1,0 +1,27 @@
+# Archivos y carpetas generados por Ceedling
+build/
+vendor/
+
+# Archivos de compilación
+*.o
+*.obj
+*.exe
+*.out
+*.elf
+*.hex
+*.bin
+
+# Archivos temporales
+*.tmp
+*.log
+*.bak
+*.swp
+*~
+
+# Configuración de editores
+.vscode/
+.idea/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
