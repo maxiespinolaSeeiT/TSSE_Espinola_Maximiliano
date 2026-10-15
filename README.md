@@ -1,4 +1,7 @@
 # Tests unitarios de `app.c`
+**Espínola Maximiliano Ariel**
+
+**SIU: e2603**
 
 ## Descripción
 
